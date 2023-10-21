@@ -14,6 +14,7 @@ const config: Config = {
     },
     extend: {
       spacing: {
+        mbs: '22px',
         '15': '60px',
         '17': '72px',
         '35': '140px',
@@ -27,6 +28,7 @@ const config: Config = {
         mainBlue: '#2E5DD4',
         mainGray: '#D9D9D9',
         textGray: '#999999',
+        borderGray: '#61677A',
         yellowStar: '#E9B824',
       },
     },
