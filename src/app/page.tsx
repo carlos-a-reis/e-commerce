@@ -5,8 +5,8 @@ export default async function Home() {
   const { products } = await response.json()
 
   return (
-    <main>
-      <ul className="flex flex-wrap justify-center gap-mbs mt-8">
+    <main className="flex justify-center">
+      <ul className="flex flex-wrap justify-center gap-mbs mt-8 md:justify-between md:w-324 md:gap-3">
         {products.map((product: ProductInfo) => (
           <ProductCard productInfo={product} key={product.id} />
         ))}
