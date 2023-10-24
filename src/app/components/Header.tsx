@@ -1,4 +1,4 @@
-import { CategoryMenu } from './CategoryMenu'
+import CategoryMenu from './CategoryMenu'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {

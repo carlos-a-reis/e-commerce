@@ -20,7 +20,7 @@ type ProductCardProps = {
   productInfo: ProductInfo
 }
 
-export function ProductCard({ productInfo }: ProductCardProps) {
+export default function ProductCard({ productInfo }: ProductCardProps) {
   return (
     <li>
       <Link href={`/product/${productInfo.id}`}>

@@ -1,4 +1,4 @@
-import { ProductCard, ProductInfo } from '../components/ProductCard'
+import ProductCard, { ProductInfo } from './components/ProductCard'
 
 export default async function Home() {
   const response = await fetch('https://dummyjson.com/products')

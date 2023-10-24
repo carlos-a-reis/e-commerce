@@ -12,7 +12,7 @@ type CategoryProps = {
   categories: string[]
 }
 
-export function CategoryMenu(props: CategoryProps) {
+export default function CategoryMenu(props: CategoryProps) {
   const [showCategoryMenu, setShowCategoryMenu] = useState(false)
 
   const handleClick = () => {
