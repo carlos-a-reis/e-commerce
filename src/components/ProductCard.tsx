@@ -25,15 +25,15 @@ export function ProductCard({ productInfo }: ProductCardProps) {
     <li>
       <Link href={`/product/${productInfo.id}`}>
         <div
-          className="flex flex-col w-40 h-60 rounded-lg border border-borderGray
+          className="flex flex-col w-40 h-60 rounded-md border border-borderGray
           hover:-translate-y-0.5 duration-100 hover:border-mainBlue
-          md:justify-center md:items-center md:w-62 md:h-87 p-cmt pb-0"
+          md:justify-center md:items-center md:w-62 md:h-87 md:p-cmt md:pb-0"
         >
           <Image
             width={160}
             height={160}
-            className="w-40 h-40 rounded-t-lg object-cover
-            md:w-59 md:h-59 md:rounded-lg"
+            className="w-40 h-40 object-cover -mt-px rounded-t-md border-t border-borderGray
+            md:w-59 md:h-59 md:mt-0 md:border-0 md:rounded-md"
             src={productInfo.thumbnail}
             alt={productInfo.title}
           />
