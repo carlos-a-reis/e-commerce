@@ -13,6 +13,9 @@ const config: Config = {
       lg: '1296px',
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+      },
       spacing: {
         cmt: '6px',
         mbs: '22px',
