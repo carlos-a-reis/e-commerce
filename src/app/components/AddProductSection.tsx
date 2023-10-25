@@ -1,42 +1,35 @@
-'use client'
+import ProductQuantitySetter from './ProductQauntitySetter'
 
-import { useState } from 'react'
-
-type AddProductSectionProps = {
+export type AddProductSectionProps = {
   stock: number
+  price: number
 }
 
-export default function AddProductSection({ stock }: AddProductSectionProps) {
-  const [productQuantity, setProductQuantity] = useState(1)
-
-  const handleSubtract = () => {
-    if (productQuantity > 1) {
-      setProductQuantity((state) => state - 1)
-    }
-  }
-
-  const handleAdd = () => {
-    if (productQuantity < stock) {
-      setProductQuantity((state) => state + 1)
-    }
-  }
-
+export default function AddProductSection({
+  stock,
+  price,
+}: AddProductSectionProps) {
   return (
-    <section className="flex justify-between w-screen fixed bottom-0 border-t border-mainGray p-6">
-      <div className="flex">
-        <button onClick={handleSubtract} className="count-btn rounded-s-xl">
-          -
-        </button>
-        <p className="flex justify-center items-center w-14 h-12 border border-mainBlue text-2xl text-mainBlue">
-          {productQuantity}
+    <section
+      className="flex justify-between fixed w-screen h-24 left-0 bottom-0 border-t border-mainGray p-6 
+        md:static md:w-168 md:h-48 md:border-2 md:rounded-2xl md:order-7
+        lg:h-70 lg:py-14 lg:px-10"
+    >
+      <ProductQuantitySetter stock={stock} price={price} />
+      <div className="md:flex flex-col justify-between">
+        <p className="hidden md:block text-xl font-medium">
+          Only <span className="text-mainBlue">{`${stock} Items`}</span> Left!
         </p>
-        <button onClick={handleAdd} className="count-btn rounded-e-xl">
-          +
+        <button className="hidden md:block w-64 h-12 rounded-xl mb-1 text-2xl font-bold text-white bg-mainBlue">
+          Buy Now
+        </button>
+        <button
+          className="w-40 h-12 rounded-xl text-xl font-bold text-white bg-mainBlue 
+          md:w-64 md:text-2xl md:text-mainBlue md:bg-white md:border md:border-mainBlue"
+        >
+          Add to Cart
         </button>
       </div>
-      <button className="w-40 h-12 rounded-xl text-xl font-bold text-white bg-mainBlue">
-        Add to Cart
-      </button>
     </section>
   )
 }
