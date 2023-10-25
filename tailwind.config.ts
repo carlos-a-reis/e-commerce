@@ -19,6 +19,7 @@ const config: Config = {
       spacing: {
         cmt: '6px',
         mbs: '22px',
+        '13': '52px',
         '15': '60px',
         '17': '72px',
         '26': '104px',
@@ -38,6 +39,9 @@ const config: Config = {
         textGray: '#999999',
         borderGray: '#61677A',
         yellowStar: '#E9B824',
+      },
+      maxWidth: {
+        ss: '180px',
       },
     },
   },

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import AddProductSection from '@/app/components/AddProductSection'
 
 type ProductProps = {
   params: {
@@ -19,23 +20,28 @@ export default async function Product({ params }: ProductProps) {
         height={390}
         src={product.thumbnail}
         alt={product.title}
-        className="h-96 object-cover"
+        className="h-85 object-cover"
       />
-      <div className="flex flex-col gap-5 p-5">
-        <h2 className="text-3xl">{product.title}</h2>
+      <div className="flex flex-col gap-5 p-6">
+        <h2 className="max-h-17 overflow-hidden text-3xl">{product.title}</h2>
         <div className="flex items-center gap-2.5 divide-textGray">
           <div className="flex gap-1">
             <FontAwesomeIcon icon={faStar} className="w-4 text-yellowStar" />
             <span>{product.rating}</span>
           </div>
-          <h3 className="border-l border-textGray pl-2.5">{product.brand}</h3>
+          <h3 className=" max-w-ss h-6 overflow-hidden border-l border-textGray pl-2.5">
+            {product.brand}
+          </h3>
           <h3 className="border-l border-textGray pl-2.5">{`Stock: ${product.stock}`}</h3>
         </div>
         <h1 className="text-4xl font-semibold text-mainBlue">
           {`$${product.price.toFixed(2)}`}
         </h1>
-        <p className="text-textGray">{product.description}</p>
+        <p className="max-h-24 overflow-hidden text-textGray">
+          {product.description}
+        </p>
       </div>
+      <AddProductSection stock={product.stock} />
     </main>
   )
 }
