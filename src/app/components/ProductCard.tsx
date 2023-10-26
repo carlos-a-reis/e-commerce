@@ -23,7 +23,7 @@ type ProductCardProps = {
 export default function ProductCard({ productInfo }: ProductCardProps) {
   return (
     <li>
-      <Link href={`/product/${productInfo.id}`}>
+      <Link href={`/products/${productInfo.id}`}>
         <div
           className="flex flex-col w-40 h-60 rounded-md border border-borderGray
           hover:-translate-y-0.5 duration-100 hover:border-mainBlue
