@@ -17,7 +17,7 @@ export default function SearchBar() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    router.push(`/search/${search}`)
+    router.push(`/search?q=${search}`)
   }
 
   return (
