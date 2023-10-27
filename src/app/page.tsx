@@ -1,4 +1,4 @@
-import ProductCard, { ProductInfo } from './components/ProductCard'
+import ProductList from './components/ProductList'
 
 export default async function Home() {
   const response = await fetch('https://dummyjson.com/products')
@@ -6,11 +6,7 @@ export default async function Home() {
 
   return (
     <main className="flex justify-center">
-      <ul className="flex flex-wrap justify-center gap-mbs mt-8 md:w-324 md:gap-3">
-        {products.map((product: ProductInfo) => (
-          <ProductCard productInfo={product} key={product.id} />
-        ))}
-      </ul>
+      <ProductList products={products} />
     </main>
   )
 }
