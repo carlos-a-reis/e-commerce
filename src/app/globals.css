@@ -12,4 +12,8 @@
   .count-btn {
     @apply w-13 h-12 text-3xl text-center text-white bg-mainBlue
   }
+
+  .opacity-box {
+    @apply w-screen h-screen z-0 fixed bg-black opacity-60
+  }
 }

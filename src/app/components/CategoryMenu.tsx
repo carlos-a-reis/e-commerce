@@ -47,10 +47,7 @@ export default function CategoryMenu(props: CategoryProps) {
               })}
             </ul>
           </aside>
-          <div
-            className="w-screen h-screen z-0 fixed bg-black opacity-60"
-            onClick={handleClick}
-          ></div>
+          <div className="opacity-box" onClick={handleClick}></div>
         </>
       )}
     </>
