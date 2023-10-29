@@ -1,9 +1,9 @@
-'user client'
+'use client'
 
-import FilteredProductList from './FilteredProductList'
-import { ProductInfo } from './ProductCard'
-import FilterMenu from './FilterMenu'
 import { useState } from 'react'
+import ProductList from './ProductList'
+import FilterMenu from './FilterComponents/FilterMenu'
+import { ProductInfo } from './ProductCard'
 
 type FilteredListProps = {
   products: ProductInfo[]
@@ -19,7 +19,7 @@ export default function FilteredList({ products }: FilteredListProps) {
   return (
     <>
       <FilterMenu productList={productList} filterProducts={filterProducts} />
-      <FilteredProductList products={productList} />
+      <ProductList products={productList} />
     </>
   )
 }
