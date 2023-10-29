@@ -16,8 +16,11 @@ export default async function Search({ searchParams }: SearchProps) {
   const { products } = await response.json()
 
   return (
-    <main>
-      <h1>{`Results for ${searchParams.q}`}</h1>
+    <main className="mt-6">
+      <h1 className="text-lg text-center">
+        Results for{' '}
+        <span className="text-mainBlue">{`"${searchParams.q}"`}</span>
+      </h1>
       <FilteredList products={products} />
     </main>
   )
