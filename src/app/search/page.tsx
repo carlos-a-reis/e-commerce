@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import FilteredProductList from '../components/FilteredProductList'
-import FilterMenu from '../components/FilterMenu'
+import FilterMenu from '../components/FilterMenu/FilterMenu'
 
 type SearchProps = {
   searchParams: { [key: string]: string }
