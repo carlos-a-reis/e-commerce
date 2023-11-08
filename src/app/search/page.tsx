@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
-import FilteredList from '../components/FilteredList'
+import FilteredProductList from '../components/FilteredProductList'
+import FilterMenu from '../components/FilterMenu'
 
 type SearchProps = {
   searchParams: { [key: string]: string }
@@ -11,17 +12,18 @@ export default async function Search({ searchParams }: SearchProps) {
   }
 
   const response = await fetch(
-    `https://dummyjson.com/products/search?q=${searchParams.q}`,
+    `https://dummyjson.com/products/search?q=${searchParams.q}`
   )
   const { products } = await response.json()
 
   return (
-    <main className="mt-6">
+    <main className="flex flex-col mt-6">
       <h1 className="text-lg text-center">
         Results for{' '}
         <span className="text-mainBlue">{`"${searchParams.q}"`}</span>
       </h1>
-      <FilteredList products={products} />
+      <FilterMenu />
+      <FilteredProductList products={products} />
     </main>
   )
 }
