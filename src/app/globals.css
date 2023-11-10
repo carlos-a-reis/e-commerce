@@ -14,10 +14,18 @@
   }
 
   .opacity-box {
-    @apply w-screen h-screen z-10 fixed bg-black opacity-60
+    @apply w-screen h-screen top-0 z-10 fixed bg-black opacity-60
   }
 
   .side-menu {
     @apply w-75 h-screen z-20 pt-6 pl-8 overflow-auto top-0 fixed bg-white 
+  }
+
+  .price-input {
+    @apply w-44 h-8 border border-mainGray rounded-lg text-center placeholder:text-textGray
+  }
+
+  .invalid-price {
+    @apply w-44 text-sm text-center text-red-500 data-[valid=false]:border-red-500
   }
 }

@@ -12,7 +12,7 @@ export default async function Search({ searchParams }: SearchProps) {
   }
 
   const response = await fetch(
-    `https://dummyjson.com/products/search?q=${searchParams.q}`
+    `https://dummyjson.com/products/search?q=${searchParams.q}`,
   )
   const { products } = await response.json()
 
