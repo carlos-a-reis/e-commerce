@@ -26,6 +26,10 @@
   }
 
   .invalid-price {
-    @apply w-44 text-sm text-center text-red-500 data-[valid=false]:border-red-500
+    @apply w-44 text-sm text-center text-red-500
+  }
+
+  .order-input {
+    @apply w-5 h-5 mr-4 appearance-none border border-textGray checked:bg-white checked:border-mainBlue checked:border-6 rounded-full
   }
 }

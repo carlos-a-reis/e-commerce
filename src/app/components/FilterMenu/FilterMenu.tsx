@@ -5,6 +5,7 @@ import PriceFilter from './PriceFilter'
 import { faSliders } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter, useSearchParams } from 'next/navigation'
+import OrderFilter from './OrderFilter'
 
 export type SetURLType = {
   maxPrice?: string | null
@@ -51,9 +52,10 @@ export default function FilterMenu() {
       </div>
       {showFilterMenu && (
         <>
-          <aside className="side-menu right-0">
-            <h1 className="text-3xl font-bold mb-10">Filter</h1>
+          <aside className="side-menu flex flex-col gap-8 right-0">
+            <h1 className="text-3xl font-bold">Filter</h1>
             <PriceFilter setURL={setURL} />
+            <OrderFilter setURL={setURL} />
           </aside>
           <div className="opacity-box" onClick={handleClick}></div>
         </>
