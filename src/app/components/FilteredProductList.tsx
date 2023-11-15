@@ -74,11 +74,24 @@ export default function FilteredProductList({ products }: ProductListProps) {
     return products
   }
 
+  const filterByBrands = (products: ProductInfo[]) => {
+    const brandString = searchParams.get('brands')
+
+    if (brandString !== 'null' && brandString !== null) {
+      const brands = brandString.replace(/%/g, ',').split(',')
+
+      return products.filter((product) =>
+        brands.includes(product.brand.toLocaleLowerCase()),
+      )
+    }
+  }
+
   const filterProducts = (products: ProductInfo[]) => {
     const priceFilter = filterByPrice(products)
     const orderFilter = filterByOrder(priceFilter)
+    const brandsFilter = filterByBrands(orderFilter)
 
-    setFilteredProducts(orderFilter)
+    setFilteredProducts(brandsFilter)
   }
 
   return (
