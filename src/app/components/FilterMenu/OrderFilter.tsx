@@ -18,7 +18,7 @@ export default function OrderFilter({ setURL }: OrderFilterProps) {
 
   return (
     <div onChange={(e) => handleInputChange(e)} className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold">Order by</h1>
+      <h1 className="filter-title">Order by</h1>
       <OrderRadioInput filterName="Rising Price" />
       <OrderRadioInput filterName="Decreasing Price" />
       <OrderRadioInput filterName="Rising Rating" />

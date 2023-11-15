@@ -6,6 +6,8 @@ import { faSliders } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter, useSearchParams } from 'next/navigation'
 import OrderFilter from './OrderFilter'
+import BrandFilter from './BrandFilter'
+import { ProductInfo } from '../ProductCard'
 
 export type SetURLType = {
   maxPrice?: string | null
@@ -14,7 +16,11 @@ export type SetURLType = {
   brands?: string | null
 }
 
-export default function FilterMenu() {
+type FilterMenuProps = {
+  products: ProductInfo[]
+}
+
+export default function FilterMenu({ products }: FilterMenuProps) {
   const [showFilterMenu, setShowFilterMenu] = useState(false)
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -56,6 +62,7 @@ export default function FilterMenu() {
             <h1 className="text-3xl font-bold">Filter</h1>
             <PriceFilter setURL={setURL} />
             <OrderFilter setURL={setURL} />
+            <BrandFilter setURL={setURL} products={products} />
           </aside>
           <div className="opacity-box" onClick={handleClick}></div>
         </>

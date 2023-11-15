@@ -22,7 +22,7 @@ export default async function Search({ searchParams }: SearchProps) {
         Results for{' '}
         <span className="text-mainBlue">{`"${searchParams.q}"`}</span>
       </h1>
-      <FilterMenu />
+      <FilterMenu products={products} />
       <FilteredProductList products={products} />
     </main>
   )

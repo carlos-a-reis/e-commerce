@@ -29,7 +29,15 @@
     @apply w-44 text-sm text-center text-red-500
   }
 
+  .filter-title {
+    @apply text-2xl font-semibold
+  }
+
   .order-input {
     @apply w-5 h-5 mr-4 appearance-none border border-textGray checked:bg-white checked:border-mainBlue checked:border-6 rounded-full
+  }
+
+  .brand-checkbox {
+    @apply w-5 h-5 mr-4 appearance-none border rounded-md border-textGray checked:bg-mainBlue
   }
 }

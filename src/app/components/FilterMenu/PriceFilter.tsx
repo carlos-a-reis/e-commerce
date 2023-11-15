@@ -39,7 +39,7 @@ export default function PriceFilter({ setURL }: PriceFilterProps) {
 
   return (
     <form className="flex flex-col gap-4" onSubmit={(e) => handleSubmit(e)}>
-      <h2 className="text-2xl font-semibold">Price</h2>
+      <h2 className="filter-title">Price</h2>
       <div className="flex flex-col">
         <input
           type="number"
