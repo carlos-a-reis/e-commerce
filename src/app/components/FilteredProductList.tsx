@@ -93,7 +93,7 @@ export default function FilteredProductList({ products }: ProductListProps) {
     const priceFilter = filterByPrice(products)
     const orderFilter = filterByOrder(priceFilter)
     const brandsFilter = filterByBrands(orderFilter)
-    console.log(brandsFilter)
+
     setFilteredProducts(brandsFilter)
   }
 
