@@ -14,6 +14,7 @@ export default function FilteredProductList({ products }: ProductListProps) {
 
   useEffect(() => {
     filterProducts(products)
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products])
 
@@ -84,13 +85,15 @@ export default function FilteredProductList({ products }: ProductListProps) {
         brands.includes(product.brand.toLocaleLowerCase()),
       )
     }
+
+    return products
   }
 
   const filterProducts = (products: ProductInfo[]) => {
     const priceFilter = filterByPrice(products)
     const orderFilter = filterByOrder(priceFilter)
     const brandsFilter = filterByBrands(orderFilter)
-
+    console.log(brandsFilter)
     setFilteredProducts(brandsFilter)
   }
 
