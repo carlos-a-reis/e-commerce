@@ -23,11 +23,11 @@ export default function BrandFilter({ setURL, products }: BrandFilterProps) {
     if (event.target.checked) {
       const URL = [...checkedBrands, param]
       setCheckedBrands(URL)
-      setURL({ brands: URL.toString().replace(/,/g, '%') })
+      setURL({ brands: URL.toString().replace(/ /g, '+').replace(/,/g, '%') })
     } else {
       const URL = checkedBrands.filter((brand) => brand !== param)
       setCheckedBrands(URL)
-      setURL({ brands: URL.toString().replace(/,/g, '%') })
+      setURL({ brands: URL.toString().replace(/ /g, '+').replace(/,/g, '%') })
     }
   }
 

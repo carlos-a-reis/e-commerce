@@ -79,7 +79,10 @@ export default function FilteredProductList({ products }: ProductListProps) {
     const brandString = searchParams.get('brands')
 
     if (brandString !== 'null' && brandString !== null) {
-      const brands = brandString.replace(/%/g, ',').split(',')
+      const brands = brandString
+        .replace(/%/g, ',')
+        .replaceAll('+', ' ')
+        .split(',')
 
       return products.filter((product) =>
         brands.includes(product.brand.toLocaleLowerCase()),
