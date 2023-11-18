@@ -17,13 +17,15 @@ export default async function Search({ searchParams }: SearchProps) {
   const { products } = await response.json()
 
   return (
-    <main className="flex flex-col mt-6">
-      <h1 className="text-lg text-center">
+    <main className="flex flex-col justify-center mt-6 md:flex-row md:flex-wrap">
+      <h1 className="w-full text-lg text-center md:text-2xl md:font-medium">
         Results for{' '}
         <span className="text-mainBlue">{`"${searchParams.q}"`}</span>
       </h1>
-      <FilterMenu products={products} />
-      <FilteredProductList products={products} />
+      <div className="flex flex-col md:flex-row md:w-324">
+        <FilterMenu products={products} />
+        <FilteredProductList products={products} />
+      </div>
     </main>
   )
 }

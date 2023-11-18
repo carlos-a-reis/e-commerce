@@ -101,7 +101,7 @@ export default function FilteredProductList({ products }: ProductListProps) {
   }
 
   return (
-    <ul className="flex flex-wrap justify-center gap-mbs mt-8 md:w-324 md:gap-3">
+    <ul className="flex flex-wrap justify-center items-start gap-mbs mt-8 md:gap-3 md:content-start">
       {filteredProducts &&
         filteredProducts.map((product: ProductInfo) => (
           <ProductCard productInfo={product} key={product.id} />

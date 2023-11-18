@@ -17,7 +17,7 @@ export default function BrandCheckBox({
         onChange={(e) => handleCheckBrand(e)}
         className="brand-checkbox"
       />
-      <label htmlFor={brand} className="font-medium">
+      <label htmlFor={brand} className="w-35 font-medium">
         {brand}
       </label>
     </li>

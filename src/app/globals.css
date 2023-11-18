@@ -14,11 +14,16 @@
   }
 
   .opacity-box {
-    @apply w-screen h-screen top-0 z-10 fixed bg-black opacity-60
+    @apply w-screen h-screen top-0 left-0 z-10 fixed bg-black opacity-60
   }
 
   .side-menu {
-    @apply w-75 h-screen z-20 pt-6 pl-8 overflow-auto top-0 fixed bg-white 
+    @apply w-75 h-screen z-20 pt-6 pl-8 overflow-y-scroll top-0 fixed bg-white 
+  }
+
+  .side-filter {
+    @apply side-menu hidden flex-col gap-8 right-0
+    md:flex md:relative md:z-0 md:overflow-visible md:pt-0 md:pl-0 md:mt-8 md:mr-20
   }
 
   .price-input {

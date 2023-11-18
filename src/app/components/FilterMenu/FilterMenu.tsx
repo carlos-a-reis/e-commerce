@@ -49,24 +49,27 @@ export default function FilterMenu({ products }: FilterMenuProps) {
 
   return (
     <>
-      <div className="flex justify-end w-85 absolute self-center">
+      <div className="flex -mt-7 justify-end w-85 absolute self-center md:hidden">
         <FontAwesomeIcon
           icon={faSliders}
-          className="w-6 text-mainBlue md:hidden"
+          className="w-6 text-mainBlue"
           onClick={handleClick}
         />
       </div>
-      {showFilterMenu && (
-        <>
-          <aside className="side-menu flex flex-col gap-8 right-0">
-            <h1 className="text-3xl font-bold">Filter</h1>
-            <PriceFilter setURL={setURL} />
-            <OrderFilter setURL={setURL} />
-            <BrandFilter setURL={setURL} products={products} />
-          </aside>
-          <div className="opacity-box" onClick={handleClick}></div>
-        </>
-      )}
+      <aside
+        data-showFilter={showFilterMenu}
+        className="side-filter data-[showFilter=true]:flex"
+      >
+        <h1 className="text-3xl font-bold md:text-4xl">Filter</h1>
+        <PriceFilter setURL={setURL} />
+        <OrderFilter setURL={setURL} />
+        <BrandFilter setURL={setURL} products={products} />
+      </aside>
+      <div
+        data-showFilter={showFilterMenu}
+        className="opacity-box hidden data-[showFilter=true]:block"
+        onClick={handleClick}
+      ></div>
     </>
   )
 }
