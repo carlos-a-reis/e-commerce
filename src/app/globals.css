@@ -38,6 +38,6 @@
   }
 
   .brand-checkbox {
-    @apply w-5 h-5 mr-4 appearance-none border rounded-md border-textGray checked:bg-mainBlue
+    @apply w-5 h-5 mr-4 accent-mainBlue
   }
 }

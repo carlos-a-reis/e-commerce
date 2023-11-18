@@ -10,7 +10,7 @@ export default function BrandCheckBox({
   handleCheckBrand,
 }: BrandCheckBoxProps) {
   return (
-    <li>
+    <li className="flex items-center">
       <input
         type="checkbox"
         name={brand}
