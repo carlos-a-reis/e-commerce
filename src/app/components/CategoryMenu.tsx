@@ -28,8 +28,8 @@ export default function CategoryMenu(props: CategoryProps) {
       />
       {showCategoryMenu && (
         <>
-          <aside className="w-75 h-screen left-0 top-0 z-10 pt-6 pl-8 overflow-auto fixed bg-white md:w-82">
-            <h1 className=" text-2xl mb-10 font-bold">All Categories</h1>
+          <aside className="side-menu left-0 md:w-82">
+            <h1 className="text-2xl mb-10 font-bold">All Categories</h1>
             <ul className="space-y-8 pb-6">
               {props.categories.map((category) => {
                 let formattedCategory =
@@ -47,10 +47,7 @@ export default function CategoryMenu(props: CategoryProps) {
               })}
             </ul>
           </aside>
-          <div
-            className="w-screen h-screen z-0 fixed bg-black opacity-60"
-            onClick={handleClick}
-          ></div>
+          <div className="opacity-box" onClick={handleClick}></div>
         </>
       )}
     </>
